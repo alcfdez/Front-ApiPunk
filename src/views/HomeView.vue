@@ -1,9 +1,11 @@
 <script setup>
-import Beers from '../components/Beers.vue';
+import BeersCard from '../components/BeersCard.vue';
+
 </script>
 
 <template>
   <main>
-    <Beers />
+  
+    <BeersCard />
   </main>
 </template>
