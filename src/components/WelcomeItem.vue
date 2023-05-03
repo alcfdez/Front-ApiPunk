@@ -10,6 +10,22 @@
       <slot></slot>
     </div>
   </div>
+ 
+  <!-- <div id="firstDiv"> -->
+ <!-- <div v-if="beers.length" id="secondDiv"> -->
+        <!-- <div v-for="beer in beers" :key="beer.id" class="card">
+            <div style="display: inline-block; padding: 16px; margin: 16px;">
+                <img :src="beer.image_url" alt="Beer Image" class="beerImg">
+                <h3 class="beerName">{{ beer.name }}</h3>
+                <p>Tagline: {{ beer.tagline }}</p>
+                <p>Description: {{ beer.description }}</p>
+
+            </div>
+    
+    
+        </div> -->
+    <!-- </div> -->
+<!-- </div> -->
 </template>
 
 <style scoped>

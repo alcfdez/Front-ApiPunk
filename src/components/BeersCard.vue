@@ -1,21 +1,22 @@
 <script>
-import { onMounted } from 'vue';
+import { ref, onBeforeMount } from 'vue';
 import axios from 'axios';
+
 
 
 export default{
     setup () { 
 
-       const beers = [];
+       const beers = ref([]);
 
         const fetchData = async () => {
-            const response = await axios.get('https://api.punkapi.com/v2/beers/');
-            beers.push(...response.data);
-            // console.log(beers);
+            const response = await axios.get('https://api.punkapi.com/v2/beers?page=2&per_page=80');
+            beers.value.push(...response.data);
             console.log(response.data);
         };
 
-        onMounted(fetchData);
+        
+        onBeforeMount(fetchData);
 
         return{
             beers,
@@ -41,7 +42,7 @@ export default{
         <div class="bodyCard">
             <h3 class="beerName"> {{ beer.name }}</h3>
             <p><strong>Tagline:</strong> {{ beer.tagline }}</p>
-            <p><strong>Description:</strong> {{ beer.description }}</p>
+            <!-- <p><strong>Description:</strong> {{ beer.description }}</p> -->
 
         </div>
 
@@ -51,21 +52,7 @@ export default{
 
 </main>
 
-<!-- <div id="firstDiv"> -->
- <!-- <div v-if="beers.length" id="secondDiv"> -->
-        <!-- <div v-for="beer in beers" :key="beer.id" class="card">
-            <div style="display: inline-block; padding: 16px; margin: 16px;">
-                <img :src="beer.image_url" alt="Beer Image" class="beerImg">
-                <h3 class="beerName">{{ beer.name }}</h3>
-                <p>Tagline: {{ beer.tagline }}</p>
-                <p>Description: {{ beer.description }}</p>
 
-            </div>
-    
-    
-        </div> -->
-    <!-- </div> -->
-<!-- </div> -->
 
 </template>
 
@@ -73,7 +60,7 @@ export default{
 
 main{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1em;
     justify-content: center;
     align-items: center;
