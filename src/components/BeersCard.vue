@@ -12,9 +12,9 @@ const props = defineProps ({
 <template>
 
 <div class="card">
+    <p class="card-name">{{  beer.name }}</p>
     <img  class="card-img"  :src="beer.image_url" alt="beer image"/>
 
-    <p class="card-name">{{  beer.name }}</p>
     <!-- <p class="card-tagline" > Tagline: {{  beer.tagline }} </p>
     <p class="card-description">Description: {{ beer.description }} </p> -->
 </div>
