@@ -14,7 +14,21 @@ actualizada.
 * Simplicidad y escalabilidad de la solución.
 * Diseño responsive.
 
+# Resultado 
+DESKTOP
 
+<img width="667" alt="image" src="https://user-images.githubusercontent.com/116891108/236326691-5c78b09f-092d-45f0-b1af-840d699b57c0.png">
+
+<img width="659" alt="image" src="https://user-images.githubusercontent.com/116891108/236326789-61050bae-7334-4a77-b904-dc1945ef7098.png">
+
+<img width="649" alt="image" src="https://user-images.githubusercontent.com/116891108/236326563-1c060f88-ec94-415b-b627-a3505f792cbd.png">
+
+<img width="536" alt="image" src="https://user-images.githubusercontent.com/116891108/236326463-9087c6d7-eb53-4565-a4c9-a61104cf0097.png">
+
+MOBILE
+
+<img width="140" alt="image" src="https://user-images.githubusercontent.com/116891108/236326919-c878d9a3-9e33-442f-9a23-8f8339ff2c56.png">
+<img width="143" alt="image" src="https://user-images.githubusercontent.com/116891108/236326961-312526e9-7d9f-42ac-bb74-8181d5408949.png">
 
 
 # Front-ApiPunk
