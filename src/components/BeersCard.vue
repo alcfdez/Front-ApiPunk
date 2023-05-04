@@ -1,29 +1,9 @@
-<script>
-import { ref, onBeforeMount } from 'vue';
-import axios from 'axios';
+<script setup>
+import { defineProps } from 'vue';
 
-
-
-export default{
-    setup () { 
-
-       const beers = ref([]);
-
-        const fetchData = async () => {
-            const response = await axios.get('https://api.punkapi.com/v2/beers?page=2&per_page=80');
-            beers.value.push(...response.data);
-            console.log(response.data);
-        };
-
-        
-        onBeforeMount(fetchData);
-
-        return{
-            beers,
-        };
-    }
-}
-
+const props = defineProps ({
+    beer : Object,
+});
 
 
 
@@ -31,34 +11,81 @@ export default{
 
 <template>
 
+<div class="card">
+    <img  class="card-img"  :src="beer.image_url" alt="beer image"/>
+
+    <p class="card-name">{{  beer.name }}</p>
+    <!-- <p class="card-tagline" > Tagline: {{  beer.tagline }} </p>
+    <p class="card-description">Description: {{ beer.description }} </p> -->
+</div>
+
+
+
+
+
   
-
-
-<main>
-
+<!-- 
 <div class="beerContainer" v-for="beer in beers" :key="beer.id">
     <div class="beerCard">
         <img class="beerImg" v-bind:src="beer.image_url" alt="Beer Image"/>
         <div class="bodyCard">
             <h3 class="beerName"> {{ beer.name }}</h3>
             <p><strong>Tagline:</strong> {{ beer.tagline }}</p>
-            <!-- <p><strong>Description:</strong> {{ beer.description }}</p> -->
+            <p><strong>Description:</strong> {{ beer.description }}</p>
 
         </div>
 
     </div>
 
-</div>
+</div> -->
 
-</main>
 
 
 
 </template>
 
-<style>
+<style lang="scss">
 
-main{
+.card{
+    margin: 0;
+    margin-bottom: 5em;
+    width: 15em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+		color: black;
+		padding: 0.5em;
+		text-align: center;
+		border: 1px solid rgba(163, 153, 163, 0.3);
+		-webkit-box-shadow: 0px 6px 6px 0px rgba(163, 153, 163, 1);
+		-moz-box-shadow: 0px 6px 6px 0px rgba(163, 153, 163, 1);
+		box-shadow: 0px 6px 6px 0px rgba(163, 153, 163, 1);
+	
+		&__title {
+			position: relative;
+			bottom: 50px;
+			font-size: 1em;
+		}
+
+		&__author {
+			position: relative;
+			bottom: 45px;
+			font-size: 0.8em;
+			color: grey;
+		}
+
+		&__img {
+			border-radius: 50%;
+			width: 50%;
+			height: 70%;
+			position: relative;
+			bottom: 65px;
+		}
+	}
+
+
+/* main{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1em;
@@ -97,7 +124,7 @@ main{
 .beerName{
     font-size: large;
     font-weight: 900;
-}
+} */
 
 
  </style>
